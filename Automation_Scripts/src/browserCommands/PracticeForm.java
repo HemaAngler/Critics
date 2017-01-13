@@ -81,7 +81,6 @@ public class PracticeForm
 			}
 		}
 		Thread.sleep(2000);
-		
 	}
 
 	@AfterClass

@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="browserCommands.PracticeForm">
+      <class name="browserCommands.ActionEvents">
         <methods>
-          <include name="testForm"/>
-          <include name="afterClass"/>
+          <include name="selectJqueryItems"/>
           <include name="beforeClass"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- browserCommands.PracticeForm -->
+      </class> <!-- browserCommands.ActionEvents -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

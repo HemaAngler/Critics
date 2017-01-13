@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test Suite]">
+  <test name="testF(failed)">
+    <classes>
+      <class name="pack_testng.AddAddress">
+        <methods>
+          <include name="addAddress"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- pack_testng.AddAddress -->
+    </classes>
+  </test> <!-- testF(failed) -->
+</suite> <!-- Failed suite [Test Suite] -->

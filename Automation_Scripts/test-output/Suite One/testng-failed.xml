@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Failed suite [Suite One]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
+  <test name="Test Firefox(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="browserCommands.BrowserTest">
+        <methods>
+          <include name="checkradioOperations"/>
+          <include name="browserCmd"/>
+          <include name="selectMethods"/>
+          <include name="beforeClass"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="navigationCmd"/>
+        </methods>
+      </class> <!-- browserCommands.BrowserTest -->
+    </classes>
+  </test> <!-- Test Firefox(failed) -->
+</suite> <!-- Failed suite [Suite One] -->

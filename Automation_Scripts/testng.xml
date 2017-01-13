@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <suite name="Test Suite"> -->
+
+	<!-- Configure testng to run two classes in one test -->
+	<!-- <test name="testA">
+		<classes>
+			<class name="pack_testng.Test_Class1" />
+			<class name="pack_testng.AddAddress" />
+		</classes>
+	</test> -->
+
+	<!-- Configure testng to run two classes in two different tests -->
+	<!-- <test name="test one">
+		<classes>
+			<class name="pack_testng.Test_Class1" />
+		</classes>
+	</test>
+	<test name="test two">
+		<classes>
+			<class name="pack_testng.AddAddress" />
+		</classes>
+	</test> -->
+	
+	<!-- Configure testng to run classes from different packages -->
+	<!-- <test name="testB">
+		<classes>
+			<class name="browserCommands.BrowserTest" />
+			<class name="pack_testng.AddAddress" />
+		</classes>
+	</test> -->
+	
+	<!-- Configure testng to run specific packages -->
+	<!-- <test name = "testC">
+		<packages>
+			<package name="browserCommands" />
+		</packages>
+	</test> -->
+	
+	<!-- Configure testng to run all packages / to include/exclude only specific packages -->
+	<!-- <test name = "testD">
+		<packages>
+			<package name=".*">
+				<include name ="browserCommands" />
+				<exclude name="pack_testng" />
+			</package>
+		</packages>
+	</test> -->
+	
+	<!-- Configure testng to include/exclude specific methods /by using regular expression -->
+	<!-- <test name="testE">
+		<classes>
+			<class name="pack_testng.Test_Class1">
+				<methods>
+					<include name="login" />
+					<include name =".*Hist.*" />
+					<exclude name="wishList" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	
+	<!-- Configure testng to skip exception -->
+	<!-- <test name = "testF">
+	<classes>
+			<class name="pack_testng.AddAddress">
+			</class>
+		</classes>
+	</test> -->
+	
+	<!-- Configure testng to execute two classes in two different windows of same browser simultaneously -->
+	<!-- <suite name = "Suite One" parallel = "classes" thread-count="2">
+		<test name = "testF">
+			<classes>
+				<class name="browserCommands.BrowserTest" />
+				<class name="browserCommands.PracticeForm" />
+			</classes>
+		</test> 
+	</suite> -->
+	
+	<!-- Configure testng to execute tests in different browsers -->
+	<suite name = "Suite One" parallel = "tests" thread-count="2">
+		<test name = "Test Firefox">
+		<parameter name="browser" value ="firefox"/>
+			<classes>
+				<class name="browserCommands.BrowserTest" />
+			</classes>
+		</test> 
+		
+		<test name = "Test Chrome">
+		<parameter name="browser" value ="chrome"/>
+			<classes>
+				<class name="browserCommands.BrowserTest" />
+			</classes>
+		</test> 
+	</suite>
+	
+<!-- </suite> -->

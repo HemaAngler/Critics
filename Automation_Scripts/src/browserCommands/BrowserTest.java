@@ -2,6 +2,7 @@ package browserCommands;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -10,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 
@@ -17,11 +19,29 @@ public class BrowserTest
 {
   WebDriver driver;
   
-  @BeforeClass
+  /*@BeforeClass
   public void beforeClass() 
   { 
 	  System.setProperty("webdriver.chrome.driver", "E:\\Software_Backup\\Selenium\\Chrome_Latest\\chromedriver.exe");
 	  driver=new ChromeDriver();
+	  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	  driver.manage().window().maximize();
+  }*/
+  
+  @BeforeClass
+  @Parameters({"browser"})
+  public void beforeClass(String browser) 
+  { 
+	  if(browser.equals("firefox"))
+	  {
+		  System.setProperty("webdriver.gecko.driver", "E:\\Software_Backup\\Selenium\\geckodriver.exe");
+		  driver = new FirefoxDriver();
+	  }
+	  else if(browser.equals("chrome"))
+	  {
+		  System.setProperty("webdriver.chrome.driver", "E:\\Software_Backup\\Selenium\\Chrome_Latest\\chromedriver.exe");
+		  driver=new ChromeDriver();
+	  }
 	  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	  driver.manage().window().maximize();
   }
