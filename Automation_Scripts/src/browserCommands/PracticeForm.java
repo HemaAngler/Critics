@@ -29,31 +29,35 @@ public class PracticeForm
 	public void testForm() throws Exception
 	{
 		driver.get("http://toolsqa.wpengine.com/automation-practice-form");
-		
+		//Send value to text entry element(textbox/textarea).
 		driver.findElement(By.name("firstname")).sendKeys("Hema");
 		Thread.sleep(2000);
 		
 		driver.findElement(By.name("lastname")).sendKeys("latha");
 		Thread.sleep(2000);
+		//Clears value in the text entry element.
 		driver.findElement(By.name("lastname")).clear();
 		Thread.sleep(2000);
 		driver.findElement(By.name("lastname")).sendKeys("latha");
 		Thread.sleep(2000);
 		
+		//Fetch the inner text of the element.
 		WebElement getTextValue = driver.findElement(By.xpath("html/body/div[1]/div[5]/div[2]/div/div/form/fieldset/div[1]/a[2]/strong"));
 		String getText =  getTextValue.getText();
 		System.out.println("Text:"+getText);
 		Thread.sleep(2000);
 		
+		//Fetch the tag name of the element.
 		WebElement submitBtn = driver.findElement(By.id("submit"));
 		String getTag =  submitBtn.getTagName();
 		System.out.println("Tag:"+getTag);
 		
+		//Gets the size of the element.
 		org.openqa.selenium.Dimension d = submitBtn.getSize();
 		System.out.println("Width:"+d.width);
 		System.out.println("Height:"+d.height);
 		
-		
+		//Locates the location of the element in the web page.
 		Point p = submitBtn.getLocation();
 		System.out.println("X coordinate:"+p.x);
 		System.out.println("Y Coordinate:"+p.y);
@@ -63,6 +67,7 @@ public class PracticeForm
 		List<WebElement> chkExperience = driver.findElements(By.name("exp"));
 		for(WebElement w : chkExperience)
 		{
+			//Fetch the value of the given attribute of the element.
 			String getVal = w.getAttribute("value");
 			if(getVal.equals("5"))
 			{
